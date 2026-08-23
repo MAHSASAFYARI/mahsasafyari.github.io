@@ -91,22 +91,20 @@ nav.navpill{
 .hero-bg-wrap{position:absolute; inset:0; z-index:0;}
 .hero-bg-wrap img{width:100%; height:100%; object-fit:cover; object-position:center 25%;}
 .hero-overlay{
-  position:absolute; left:6%; top:52%; transform:translateY(-50%);
+  position:absolute; left:6%; top:42%; transform:translateY(-50%);
   z-index:1; text-align:left; direction:ltr; max-width:360px;
 }
 .hero-name{margin-bottom:10px;}
 .hero-name .fa{font-family:'Vazirmatn',sans-serif; direction:rtl; display:block; font-size:clamp(2.4rem,6vw,3.8rem); font-weight:900; color:var(--ink); line-height:1;}
 .hero-name .en{display:block; font-size:0.85rem; font-weight:600; letter-spacing:0.3em; color:var(--secondary); margin-top:8px;}
-.hero-title{margin-bottom:28px;}
+.hero-title{margin-bottom:0;}
 .hero-title .en{display:block; font-size:0.78rem; font-weight:700; letter-spacing:0.2em; color:var(--accent);}
 .hero-title .fa{font-family:'Vazirmatn',sans-serif; direction:rtl; display:block; font-size:1.15rem; font-weight:700; color:var(--ink); margin-top:4px;}
-.hero-cta{display:flex; gap:10px; flex-wrap:wrap; direction:rtl;}
+.hero-cta{position:absolute; left:6%; bottom:28px; z-index:1; display:flex; gap:10px; flex-wrap:wrap; direction:rtl;}
 @media (max-width:600px){
-  .hero{height:auto; min-height:0; margin-top:-84px; overflow:visible;}
-  .hero-bg-wrap{position:relative; height:46vh; min-height:320px;}
-  .hero-overlay{position:static; transform:none; text-align:center; direction:rtl; max-width:none; padding:36px 24px 4px; background:var(--bg);}
-  .hero-name .en, .hero-title .en{letter-spacing:0.2em;}
-  .hero-cta{justify-content:center;}
+  .hero{height:78vh; min-height:440px; margin-top:-84px;}
+  .hero-overlay{left:6%; top:38%; max-width:none; right:6%;}
+  .hero-cta{left:6%; right:6%; bottom:20px;}
 }
 .btn{display:inline-flex; align-items:center; gap:6px; font-weight:600; font-size:0.98rem; padding:13px 26px; border-radius:980px; transition:transform .15s, opacity .15s, background .15s; cursor:pointer; border:none;}
 .btn.primary{background:linear-gradient(90deg, #B3AEF8, var(--accent-light)); color:var(--text-purple); font-weight:700;}
@@ -297,10 +295,10 @@ footer strong{color:#fff;}
     <div class="hero-title">
       <span class="en">GRAPHIC DESIGNER</span><span class="fa">طراح گرافیک</span>
     </div>
-    <div class="hero-cta">
-      <a href="#portfolio" class="btn primary">مشاهده نمونه‌کار ←</a>
-      <a href="https://wa.me/989027587655" target="_blank" rel="noopener" class="btn link">تماس در واتساپ</a>
-    </div>
+  </div>
+  <div class="hero-cta">
+    <a href="#portfolio" class="btn primary">مشاهده نمونه‌کار ←</a>
+    <a href="https://wa.me/989027587655" target="_blank" rel="noopener" class="btn link">تماس در واتساپ</a>
   </div>
 </section>
 
