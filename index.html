@@ -154,17 +154,13 @@ nav.navpill{
 /* ---------- CLIENTS ---------- */
 .clients{padding:64px 0; border-top:1px solid var(--line); border-bottom:1px solid var(--line);}
 .clients .eyebrow{text-align:center;}
-.clients-row{display:flex; flex-wrap:wrap; justify-content:center; gap:14px; align-items:center;}
-.clients-row .c{
-  font-weight:700; font-size:0.98rem; color:var(--secondary);
-  background:rgba(0,0,0,0.03);
-  backdrop-filter:blur(10px) saturate(140%);
-  -webkit-backdrop-filter:blur(10px) saturate(140%);
-  border:1px solid rgba(0,0,0,0.06);
-  padding:12px 26px; border-radius:999px;
-  transition:color .2s, background .2s, transform .2s;
+.clients-row{display:flex; flex-wrap:wrap; justify-content:center; align-items:center; gap:36px 44px;}
+.clients-row img{
+  height:42px; width:auto; max-width:130px; object-fit:contain;
+  filter:grayscale(1) opacity(0.55);
+  transition:filter .25s, transform .2s;
 }
-.clients-row .c:hover{color:var(--ink); background:rgba(109,95,224,0.07); transform:translateY(-2px);}
+.clients-row img:hover{filter:grayscale(0) opacity(1); transform:translateY(-2px);}
 
 /* ---------- PORTFOLIO (dark) ---------- */
 .portfolio{background:var(--dark); color:#fff; padding:96px 0 100px;}
@@ -428,14 +424,17 @@ footer strong{color:#fff;}
   <div class="wrap">
     <span class="eyebrow" style="display:block; margin-bottom:24px;">افتخار همکاری با</span>
     <div class="clients-row">
-      <div class="c">ایران‌خودرو</div>
-      <div class="c">بانک سامان</div>
-      <div class="c">ماکارونی سمیرا</div>
-      <div class="c">MVM</div>
-      <div class="c">Fownix</div>
-      <div class="c">Xtrim</div>
-      <div class="c">Whale Market</div>
-      <div class="c">Daily Market</div>
+      <img src="images/logo-saman-bank.png" alt="بانک سامان">
+      <img src="images/logo-whale-market.png" alt="Whale Market">
+      <img src="images/logo-daily-market.png" alt="Daily Market">
+      <img src="images/logo-vara.png" alt="VARA">
+      <img src="images/logo-samira.png" alt="ماکارونی سمیرا">
+      <img src="images/logo-asaadi.png" alt="Asaadi Consulting">
+      <img src="images/logo-fownix.png" alt="Fownix">
+      <img src="images/logo-fownix-nev.png" alt="Fownix NEV">
+      <img src="images/logo-vvv-777.png" alt="مدیران خودرو 777">
+      <img src="images/logo-mvm.png" alt="MVM">
+      <img src="images/logo-iranian-khodro.png" alt="ایرانیان خودرو">
     </div>
   </div>
 </section>
