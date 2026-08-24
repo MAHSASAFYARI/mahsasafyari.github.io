@@ -91,20 +91,20 @@ nav.navpill{
 .hero-bg-wrap{position:absolute; inset:0; z-index:0;}
 .hero-bg-wrap img{width:100%; height:100%; object-fit:cover; object-position:center 25%;}
 .hero-overlay{
-  position:absolute; left:6%; top:42%; transform:translateY(-50%);
-  z-index:1; text-align:left; direction:ltr; max-width:360px;
+  position:absolute; left:6%; top:14%;
+  z-index:1; text-align:left; direction:ltr; max-width:400px;
 }
-.hero-name{margin-bottom:10px;}
-.hero-name .fa{font-family:'Vazirmatn',sans-serif; direction:rtl; display:block; font-size:clamp(2.4rem,6vw,3.8rem); font-weight:900; color:var(--ink); line-height:1;}
-.hero-name .en{display:block; font-size:0.85rem; font-weight:600; letter-spacing:0.3em; color:var(--secondary); margin-top:8px;}
-.hero-title{margin-bottom:0;}
-.hero-title .en{display:block; font-size:0.78rem; font-weight:700; letter-spacing:0.2em; color:var(--accent);}
-.hero-title .fa{font-family:'Vazirmatn',sans-serif; direction:rtl; display:block; font-size:1.15rem; font-weight:700; color:var(--ink); margin-top:4px;}
-.hero-cta{position:absolute; left:6%; bottom:28px; z-index:1; display:flex; gap:10px; flex-wrap:wrap; direction:rtl;}
+.hero-name{margin-bottom:6px;}
+.hero-name .fa{font-family:'Vazirmatn',sans-serif; direction:rtl; display:block; font-size:clamp(2rem,5vw,3rem); font-weight:900; color:var(--ink); line-height:1.15;}
+.hero-name .fa .accent{color:var(--accent);}
+.hero-title{margin-bottom:20px; direction:rtl;}
+.hero-title .fa{font-family:'Vazirmatn',sans-serif; display:inline-block; font-size:1.1rem; font-weight:700; color:var(--accent);}
+.hero-title .en{display:block; font-size:0.72rem; font-weight:700; letter-spacing:0.2em; color:var(--secondary); margin-top:4px;}
+.hero-cta{display:flex; gap:10px; flex-wrap:wrap; direction:rtl; margin-bottom:16px;}
+.hero-tagline-small{direction:rtl; font-size:0.85rem; color:var(--secondary); font-weight:500;}
 @media (max-width:600px){
-  .hero{height:78vh; min-height:440px; margin-top:-84px;}
-  .hero-overlay{left:6%; top:38%; max-width:none; right:6%;}
-  .hero-cta{left:6%; right:6%; bottom:20px;}
+  .hero{height:86vh; min-height:520px; margin-top:-84px;}
+  .hero-overlay{left:6%; top:10%; right:6%; max-width:none;}
 }
 .btn{display:inline-flex; align-items:center; gap:6px; font-weight:600; font-size:0.98rem; padding:13px 26px; border-radius:980px; transition:transform .15s, opacity .15s, background .15s; cursor:pointer; border:none;}
 .btn.primary{background:linear-gradient(90deg, #B3AEF8, var(--accent-light)); color:var(--text-purple); font-weight:700;}
@@ -286,19 +286,21 @@ footer strong{color:#fff;}
 <main>
 <section class="hero" id="home">
   <div class="hero-bg-wrap">
-    <img src="images/hero.jpg" alt="">
+    <img src="images/hero.png" alt="">
   </div>
   <div class="hero-overlay">
     <div class="hero-name">
-      <span class="fa">مهسا</span><span class="en">MAHSA</span>
+      <span class="fa">مهسا <span class="accent">صفیاری</span></span>
     </div>
     <div class="hero-title">
-      <span class="en">GRAPHIC DESIGNER</span><span class="fa">طراح گرافیک</span>
+      <span class="fa">| طراح گرافیک</span>
+      <span class="en">GRAPHIC DESIGNER</span>
     </div>
-  </div>
-  <div class="hero-cta">
-    <a href="#portfolio" class="btn primary">مشاهده نمونه‌کار ←</a>
-    <a href="https://wa.me/989027587655" target="_blank" rel="noopener" class="btn link">تماس در واتساپ</a>
+    <div class="hero-cta">
+      <a href="https://wa.me/989027587655" target="_blank" rel="noopener" class="btn link">تماس در واتساپ</a>
+      <a href="#portfolio" class="btn primary">مشاهده نمونه‌کارها ←</a>
+    </div>
+    <p class="hero-tagline-small">ایده‌پردازی تا اجرا، در کنار برند شما 🤍</p>
   </div>
 </section>
 
