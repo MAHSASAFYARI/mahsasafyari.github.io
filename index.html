@@ -87,9 +87,9 @@ nav.navpill{
 }
 
 /* ---------- HERO ---------- */
-.hero{position:relative; height:92vh; min-height:520px; max-height:820px; overflow:hidden; margin-top:-92px;}
+.hero{position:relative; aspect-ratio:3/2; height:auto; overflow:hidden; margin-top:-92px; background:#f7eee8;}
 .hero-bg-wrap{position:absolute; inset:0; z-index:0;}
-.hero-bg-wrap img{width:100%; height:100%; object-fit:cover; object-position:center 25%;}
+.hero-bg-wrap img{width:100%; height:100%; object-fit:cover; object-position:center center;}
 .hero-overlay{
   position:absolute; left:6%; top:50%; transform:translateY(-50%);
   z-index:1; text-align:left; direction:ltr; max-width:400px;
@@ -103,7 +103,7 @@ nav.navpill{
 .hero-cta{display:flex; gap:10px; flex-wrap:wrap; direction:rtl; margin-bottom:16px;}
 .hero-tagline-small{direction:rtl; font-size:0.85rem; color:var(--secondary); font-weight:500;}
 @media (max-width:600px){
-  .hero{height:86vh; min-height:520px; margin-top:-84px;}
+  .hero{margin-top:-84px;}
   .hero-overlay{left:6%; top:50%; transform:translateY(-50%); right:6%; max-width:none;}
 }
 .btn{display:inline-flex; align-items:center; gap:6px; font-weight:600; font-size:0.98rem; padding:13px 26px; border-radius:980px; transition:transform .15s, opacity .15s, background .15s; cursor:pointer; border:none;}
@@ -286,7 +286,7 @@ footer strong{color:#fff;}
 <main>
 <section class="hero" id="home">
   <div class="hero-bg-wrap">
-    <img src="images/hero.jpg" alt="">
+    <img src="sunlit_lavender_workspace.png" alt="مهسا صفیاری - طراح گرافیک">
   </div>
   <div class="hero-overlay">
     <div class="hero-name">
