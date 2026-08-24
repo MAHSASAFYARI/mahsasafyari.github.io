@@ -91,7 +91,7 @@ nav.navpill{
 .hero-bg-wrap{position:absolute; inset:0; z-index:0;}
 .hero-bg-wrap img{width:100%; height:100%; object-fit:cover; object-position:center 25%;}
 .hero-overlay{
-  position:absolute; left:6%; top:14%;
+  position:absolute; left:6%; top:50%; transform:translateY(-50%);
   z-index:1; text-align:left; direction:ltr; max-width:400px;
 }
 .hero-name{margin-bottom:6px;}
@@ -104,7 +104,7 @@ nav.navpill{
 .hero-tagline-small{direction:rtl; font-size:0.85rem; color:var(--secondary); font-weight:500;}
 @media (max-width:600px){
   .hero{height:86vh; min-height:520px; margin-top:-84px;}
-  .hero-overlay{left:6%; top:10%; right:6%; max-width:none;}
+  .hero-overlay{left:6%; top:50%; transform:translateY(-50%); right:6%; max-width:none;}
 }
 .btn{display:inline-flex; align-items:center; gap:6px; font-weight:600; font-size:0.98rem; padding:13px 26px; border-radius:980px; transition:transform .15s, opacity .15s, background .15s; cursor:pointer; border:none;}
 .btn.primary{background:linear-gradient(90deg, #B3AEF8, var(--accent-light)); color:var(--text-purple); font-weight:700;}
