@@ -501,159 +501,21 @@ footer strong{color:#fff;}
 }
 
 
-/* HERO FINAL - isolated */
+/* Mobile Hero Image Size Adjustment Only */
+@media (max-width:780px){
+  .hero{
+    min-height: 500px !important;
+  }
 
-.hero-final{
-position:relative;
-height:100vh;
-min-height:720px;
-overflow:hidden;
-}
+  .hero-bg-wrap{
+    height: 66.66% !important;
+    top: 0 !important;
+    bottom: auto !important;
+  }
 
-.hero-final-image{
-position:absolute;
-inset:0;
-}
-
-.hero-final-image img{
-width:100%;
-height:100%;
-object-fit:cover;
-display:block;
-}
-
-.hero-final-overlay{
-position:absolute;
-inset:0;
-background:linear-gradient(90deg,rgba(255,255,255,.94),rgba(255,255,255,.15));
-}
-
-.hero-final-content{
-position:absolute;
-z-index:2;
-left:7%;
-top:50%;
-transform:translateY(-50%);
-width:500px;
-direction:rtl;
-}
-
-.hero-final-tag{
-display:inline-block;
-padding:8px 18px;
-border-radius:999px;
-background:rgba(138,126,245,.18);
-color:#453b78;
-font-weight:700;
-font-size:.8rem;
-margin-bottom:20px;
-}
-
-.hero-final-content h1{
-font-size:clamp(3rem,5vw,4.5rem);
-line-height:1.3;
-margin:0;
-font-weight:900;
-}
-
-.hero-final-content h1 span{
-color:#8a7ef5;
-}
-
-.hero-final-content h2{
-margin:18px 0;
-font-size:1.35rem;
-}
-
-.hero-final-content p{
-font-size:1rem;
-line-height:2;
-margin:0 0 25px;
-}
-
-.hero-final-actions{
-display:flex;
-gap:12px;
-}
-
-.hero-final-actions a{
-padding:13px 25px;
-border-radius:999px;
-text-decoration:none;
-font-weight:700;
-background:#8a7ef5;
-color:white;
-}
-
-.hero-final-actions a:last-child{
-background:white;
-color:#1d1d1f;
-border:1px solid rgba(0,0,0,.08);
-}
-
-.hero-final-stats{
-display:grid;
-grid-template-columns:repeat(3,auto);
-gap:35px;
-margin-top:40px;
-}
-
-.hero-final-stats strong{
-display:block;
-font-size:1.5rem;
-}
-
-.hero-final-stats span{
-font-size:.85rem;
-color:#6e6e73;
-white-space:nowrap;
-}
-
-.hero-final-card{
-position:absolute;
-right:8%;
-bottom:20%;
-z-index:3;
-padding:18px 25px;
-border-radius:22px;
-background:rgba(255,255,255,.85);
-backdrop-filter:blur(20px);
-box-shadow:0 20px 50px rgba(0,0,0,.12);
-}
-
-.hero-final-card span{
-display:block;
-color:#6e6e73;
-font-size:.85rem;
-margin-top:5px;
-}
-
-@media(max-width:780px){
-.hero-final-content{
-left:24px;
-right:24px;
-width:auto;
-text-align:center;
-}
-
-.hero-final-overlay{
-background:linear-gradient(0deg,rgba(255,255,255,.96),transparent);
-}
-
-.hero-final-actions,
-.hero-final-stats{
-justify-content:center;
-flex-wrap:wrap;
-}
-
-.hero-final-stats{
-grid-template-columns:repeat(3,1fr);
-gap:15px;
-}
-
-.hero-final-card{
-display:none;
-}
+  .hero-bg-wrap img{
+    object-fit: cover !important;
+  }
 }
 
 </style>
@@ -676,60 +538,24 @@ display:none;
 </header>
 
 <main>
-<section class="hero-final" id="home">
-
-  <div class="hero-final-image">
+<section class="hero" id="home">
+  <div class="hero-bg-wrap">
     <img src="sunlit_lavender_workspace.png" alt="مهسا صفیاری - طراح گرافیک">
   </div>
-
-  <div class="hero-final-overlay"></div>
-
-  <div class="hero-final-content">
-
-    <div class="hero-final-tag">
-      GRAPHIC DESIGNER
+  <div class="hero-overlay">
+    <div class="hero-name">
+      <span class="fa">مهسا <span class="accent">صفیاری</span></span>
     </div>
-
-    <h1>
-      مهسا <span>صفیاری</span>
-    </h1>
-
-    <h2>
-      طراح گرافیک و متخصص هویت بصری برند
-    </h2>
-
-    <p>
-      طراحی هویت بصری، کمپین‌های تبلیغاتی و تجربه‌های بصری
-      برای برندهایی که می‌خواهند متفاوت دیده شوند.
-    </p>
-
-    <div class="hero-final-actions">
-      <a href="#portfolio">مشاهده نمونه‌کارها</a>
-      <a href="https://wa.me/989027587655">شروع همکاری</a>
+    <div class="hero-title">
+      <span class="fa">| طراح گرافیک</span>
+      <span class="en">GRAPHIC DESIGNER</span>
     </div>
-
-    <div class="hero-final-stats">
-      <div>
-        <strong>50+</strong>
-        <span>پروژه اجرا شده</span>
-      </div>
-      <div>
-        <strong>10+</strong>
-        <span>برند</span>
-      </div>
-      <div>
-        <strong>MVM</strong>
-        <span>Fownix • Xtrim</span>
-      </div>
+    <div class="hero-cta">
+      <a href="https://wa.me/989027587655" target="_blank" rel="noopener" class="btn link">تماس در واتساپ</a>
+      <a href="#portfolio" class="btn primary">مشاهده نمونه‌کارها ←</a>
     </div>
-
+    <p class="hero-tagline-small">ایده‌پردازی تا اجرا، در کنار برند شما 🤍</p>
   </div>
-
-  <div class="hero-final-card">
-    <strong>Automotive Design</strong>
-    <span>MVM Campaign</span>
-  </div>
-
 </section>
 
 <section class="services" id="services">
