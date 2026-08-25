@@ -340,56 +340,124 @@ footer strong{color:#fff;}
 }
 
 
-/* Hero background white */
-.hero,
-.hero-bg-wrap{
-  background:#ffffff !important;
-}
-
-
-/* Force hero section pure white */
-.hero,
-.hero-bg-wrap,
+/* Hero buttons and responsive layout fix */
 .hero-overlay{
-    background:#ffffff !important;
+  left:7%;
+  top:50%;
+  max-width:430px;
+  text-align:left;
 }
 
-.hero-bg-wrap img{
-    background:#ffffff !important;
+.hero-cta{
+  margin-top:24px;
+  gap:12px;
+}
+
+.hero-cta .btn{
+  min-height:48px;
+  padding:12px 28px;
+  font-size:0.95rem;
+  white-space:nowrap;
+}
+
+.btn.primary{
+  box-shadow:0 12px 30px rgba(138,126,245,0.25);
+}
+
+.btn.link{
+  background:rgba(255,255,255,0.9);
+}
+
+.hero-tagline-small{
+  margin-top:10px;
+}
+
+@media (max-width:780px){
+  .hero{
+    aspect-ratio:auto;
+    min-height:760px;
+    display:flex;
+    align-items:flex-end;
+    padding-bottom:34px;
+  }
+
+  .hero-bg-wrap{
+    position:absolute;
+    inset:0;
+    height:100%;
+  }
+
+  .hero-bg-wrap img{
+    object-fit:cover;
+    object-position:center top;
+  }
+
+  .hero-overlay{
+    position:relative;
+    left:auto;
+    top:auto;
+    transform:none;
+    right:auto;
+    width:100%;
+    max-width:none;
+    padding:0 24px;
+    text-align:center;
+    direction:rtl;
+  }
+
+  .hero-name .fa{
+    font-size:2.2rem;
+  }
+
+  .hero-cta{
+    justify-content:center;
+    flex-direction:column;
+    width:100%;
+    margin-top:20px;
+  }
+
+  .hero-cta .btn{
+    width:100%;
+    justify-content:center;
+  }
+
+  .hero-tagline-small{
+    text-align:center;
+  }
 }
 
 
-/* Hero transparent background fix */
-.hero,
-.hero-bg-wrap,
-.hero-overlay{
-  background:transparent !important;
+/* Hero mobile typography fix */
+.hero-name .fa{
+  line-height:1.35 !important;
 }
 
-.hero-bg-wrap img{
-  background:transparent !important;
+.hero-title{
+  margin-top:12px !important;
 }
 
-
-/* FINAL HERO CLEAN OVERRIDE */
-.hero{
-  background:#fff !important;
-}
-
-.hero-bg-wrap{
-  background:transparent !important;
-}
-
-.hero-bg-wrap img{
-  background:transparent !important;
-}
-
-.hero::before,
-.hero::after,
-.hero-bg-wrap::before,
-.hero-bg-wrap::after{
-  content:none !important;
+.hero-title .en{
   display:none !important;
+}
+
+.hero-tagline-small{
+  display:none !important;
+}
+
+@media (max-width:780px){
+  .hero-name .fa{
+    font-size:2rem !important;
+    line-height:1.5 !important;
+  }
+
+  .hero-title{
+    margin-top:14px !important;
+    margin-bottom:18px !important;
+  }
+
+  .hero-cta{
+    margin-top:10px !important;
+  }
 }
 
 </style>
