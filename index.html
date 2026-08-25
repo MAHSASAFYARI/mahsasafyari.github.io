@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>مهسا صفیاری | Graphic Designer</title>
+<link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;700;900&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box}
+body{
+    margin:0;
+    font-family:Vazirmatn,sans-serif;
+    background:#fff;
+    color:#1d1d1f;
+}
+.hero{
+    min-height:100vh;
+    display:flex;
+    align-items:center;
+    overflow:hidden;
+    position:relative;
+    background:
+    radial-gradient(circle at 20% 30%,rgba(138,126,245,.18),transparent 35%),
+    #fff;
+}
+.container{
+    width:min(1200px,92%);
+    margin:auto;
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:40px;
+    align-items:center;
+}
+.content{
+    direction:rtl;
+}
+h1{
+    font-size:clamp(42px,6vw,72px);
+    line-height:1.2;
+    margin:0 0 15px;
+    font-weight:900;
+}
+h1 span{color:#8a7ef5}
+h2{
+    color:#6e6e73;
+    font-size:24px;
+}
+p{
+    color:#6e6e73;
+    line-height:2;
+    font-size:18px;
+}
+.buttons{
+    display:flex;
+    gap:12px;
+    margin-top:35px;
+}
+.btn{
+    padding:14px 28px;
+    border-radius:999px;
+    text-decoration:none;
+    font-weight:700;
+}
+.primary{
+    background:#8a7ef5;
+    color:#fff;
+}
+.secondary{
+    border:1px solid #ddd;
+}
+.stats{
+    display:flex;
+    gap:35px;
+    margin-top:45px;
+}
+.stats strong{
+    display:block;
+    font-size:28px;
+}
+.image{
+    position:relative;
+}
+.image img{
+    width:100%;
+    border-radius:40px;
+    display:block;
+    box-shadow:0 30px 80px rgba(0,0,0,.12);
+}
+.card{
+    position:absolute;
+    left:-30px;
+    bottom:40px;
+    background:rgba(255,255,255,.85);
+    backdrop-filter:blur(20px);
+    padding:20px;
+    border-radius:24px;
+    box-shadow:0 20px 50px rgba(0,0,0,.1);
+}
+@media(max-width:850px){
+.container{grid-template-columns:1fr}
+.image{order:-1}
+.content{text-align:center}
+.buttons,.stats{justify-content:center;flex-wrap:wrap}
+}
+</style>
+</head>
+<body>
+<section class="hero">
+<div class="container">
+
+<div class="content">
+<h1>مهسا <span>صفیاری</span></h1>
+<h2>طراح گرافیک و متخصص هویت بصری برند</h2>
+<p>
+طراحی هویت بصری، کمپین‌های تبلیغاتی و تجربه‌های بصری
+برای برندهایی که می‌خواهند متفاوت دیده شوند.
+</p>
+
+<div class="buttons">
+<a class="btn primary" href="#portfolio">مشاهده نمونه‌کارها</a>
+<a class="btn secondary" href="#">شروع همکاری</a>
+</div>
+
+<div class="stats">
+<div><strong>50+</strong>پروژه اجرا شده</div>
+<div><strong>10+</strong>برند</div>
+<div><strong>5+</strong>سال تجربه</div>
+</div>
+</div>
+
+<div class="image">
+<img src="sunlit_lavender_workspace.png" alt="مهسا صفیاری">
+<div class="card">
+<strong>Brand Identity</strong><br>
+MVM • Fownix • 777
+</div>
+</div>
+
+</div>
+</section>
+</body>
+</html>
