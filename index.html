@@ -50,14 +50,12 @@
 html{scroll-behavior:smooth;}
 body{
   font-family:'Vazirmatn', sans-serif;
-  color:var(--ink); overflow-x:hidden; -webkit-font-smoothing:antialiased;
-  background:linear-gradient(-45deg, var(--bg), var(--surface-2), var(--accent-light), var(--bg));
-  background-size:400% 400%;
-  animation:bgGradientMove 18s ease infinite;
+  background:var(--bg);
+  color:var(--ink);
+  overflow-x:hidden;
+  -webkit-font-smoothing:antialiased;
 }
-@keyframes bgGradientMove{
-  0%{background-position:0% 50%;}
-  50%{background-position:100% 50%;}
+50%{background-position:100% 50%;}
   100%{background-position:0% 50%;}
 }
 #bgParticles{position:fixed; inset:0; width:100%; height:100%; z-index:-1; pointer-events:none;}
@@ -530,7 +528,6 @@ footer strong{color:#fff;}
 </head>
 <body>
 
-<canvas id="bgParticles"></canvas>
 
 <header>
   <nav class="navpill wrap">
@@ -745,6 +742,7 @@ footer strong{color:#fff;}
     "en":"Campaign & Advertising",
     "desc":"کمپین‌های تبلیغاتی، تبلیغات خودرو، پوسترهای مناسبتی، ورزشی و کمپین‌های کاراکتر برند.",
     "images":[
+      
       {"src":"images/campaigns/campaign-01.webp","cap":"کمپین تبلیغاتی 01"},
       {"src":"images/campaigns/campaign-02.webp","cap":"کمپین تبلیغاتی 02"},
       {"src":"images/campaigns/campaign-03.webp","cap":"کمپین تبلیغاتی 03"},
@@ -754,9 +752,11 @@ footer strong{color:#fff;}
       {"src":"images/campaigns/campaign-07.webp","cap":"کمپین تبلیغاتی 07"},
       {"src":"images/campaigns/campaign-08.webp","cap":"کمپین تبلیغاتی 08"},
       {"src":"images/campaigns/campaign-09.webp","cap":"کمپین تبلیغاتی 09"},
-      {"src":"images/campaigns/campaign-10.webp","cap":"کمپین تبلیغاتی 10"}
+      {"src":"images/campaigns/campaign-10.webp","cap":"کمپین تبلیغاتی 10"},
+      {"src":"images/campaigns/campaign-11.webp","cap":"کمپین تبلیغاتی 11"},
+      {"src":"images/campaigns/campaign-12.webp","cap":"کمپین تبلیغاتی 12"}
     ]
-  },
+},
   {
     "id":"social",
     "fa":"شبکه‌های اجتماعی",
@@ -879,75 +879,7 @@ footer strong{color:#fff;}
   document.addEventListener('keydown', (e) => { if(e.key === 'Escape') lightbox.classList.remove('open'); });
 </script>
 
-<script>
-(function(){
-  const canvas = document.getElementById('bgParticles');
-  if(!canvas) return;
-  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  if(reduceMotion) return;
 
-  const ctx = canvas.getContext('2d');
-  let w, h, particles;
-  const ACCENT = '138,126,245'; /* matches --accent: #8A7EF5 */
-  const LINK_DIST = 130;
-
-  function resize(){
-    w = canvas.width = window.innerWidth;
-    h = canvas.height = window.innerHeight;
-  }
-
-  function makeParticles(){
-    const count = Math.min(60, Math.floor((w * h) / 22000));
-    particles = [];
-    for(let i = 0; i < count; i++){
-      particles.push({
-        x: Math.random() * w,
-        y: Math.random() * h,
-        vx: (Math.random() - 0.5) * 0.35,
-        vy: (Math.random() - 0.5) * 0.35,
-        r: Math.random() * 1.6 + 0.7
-      });
-    }
-  }
-
-  function step(){
-    ctx.clearRect(0, 0, w, h);
-
-    for(const p of particles){
-      p.x += p.vx;
-      p.y += p.vy;
-      if(p.x < 0 || p.x > w) p.vx *= -1;
-      if(p.y < 0 || p.y > h) p.vy *= -1;
-      ctx.beginPath();
-      ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
-      ctx.fillStyle = `rgba(${ACCENT}, 0.45)`;
-      ctx.fill();
-    }
-
-    for(let i = 0; i < particles.length; i++){
-      for(let j = i + 1; j < particles.length; j++){
-        const a = particles[i], b = particles[j];
-        const dx = a.x - b.x, dy = a.y - b.y;
-        const dist = Math.sqrt(dx * dx + dy * dy);
-        if(dist < LINK_DIST){
-          ctx.beginPath();
-          ctx.moveTo(a.x, a.y);
-          ctx.lineTo(b.x, b.y);
-          ctx.strokeStyle = `rgba(${ACCENT}, ${0.1 * (1 - dist / LINK_DIST)})`;
-          ctx.lineWidth = 1;
-          ctx.stroke();
-        }
-      }
-    }
-    requestAnimationFrame(step);
-  }
-
-  window.addEventListener('resize', () => { resize(); makeParticles(); });
-  resize();
-  makeParticles();
-  step();
-})();
-</script>
 
 </body>
 </html>
