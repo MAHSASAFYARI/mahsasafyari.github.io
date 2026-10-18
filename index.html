@@ -221,7 +221,6 @@ body.cat-open > main, body.cat-open > footer{display:none;}
 .cat-gallery figure{margin:0; border-radius:20px; overflow:hidden; cursor:zoom-in;}
 .cat-gallery figure img{width:100%; height:auto; display:block; transition:transform .25s ease;}
 .cat-gallery figure:hover img{transform:scale(1.025);}
-.cat-gallery figcaption{padding:16px 4px; font-size:0.92rem; color:#9a9a9f;}
 
 .lightbox{position:fixed; inset:0; background:rgba(0,0,0,0.9); display:none; align-items:center; justify-content:center; z-index:100; padding:24px;}
 .lightbox.open{display:flex;}
@@ -859,7 +858,7 @@ footer strong{color:#fff;}
     catEn.innerHTML = c.en;
     catDesc.textContent = c.desc;
     catGallery.innerHTML = c.images.map(img =>
-      `<figure data-src="${img.src}"><img src="${img.src}" alt="${img.cap}" loading="lazy" onerror="this.closest('figure').remove()"><figcaption>${img.cap}</figcaption></figure>`
+      `<figure data-src="${img.src}"><img src="${img.src}" alt="${img.cap}" loading="lazy" onerror="this.closest('figure').remove()"></figure>`
     ).join('');
     document.body.classList.add('cat-open');
     categoryView.classList.add('open');
