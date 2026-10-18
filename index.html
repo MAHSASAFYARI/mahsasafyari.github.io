@@ -616,7 +616,7 @@ footer strong{color:#fff;}
         <div class="cap"><div class="fa">چاپ و بسته‌بندی</div><div class="en">Print & Packaging</div></div>
       </div>
       <div class="port-item" data-cat="environmental">
-        <div class="port-thumb"><img src="images/page-12.jpg" alt="گرافیک محیطی" loading="lazy" width="700" height="525"></div>
+        <div class="port-thumb"><img src="images/environmental/environmental-01.webp" alt="گرافیک محیطی" loading="lazy" width="700" height="525"></div>
         <div class="cap"><div class="fa">گرافیک محیطی</div><div class="en">Environmental Graphics</div></div>
       </div>
       <div class="port-item" data-cat="campaign">
@@ -801,8 +801,18 @@ footer strong{color:#fff;}
     "en":"Environmental Graphics",
     "desc":"طراحی بیلبورد، لایت‌باکس و تبلیغات بزرگ‌مقیاس شهری و محیطی.",
     "images":[
-      {"src":"images/page-12.jpg","cap":"بیلبورد شهری VX Land Business Jet"},
-      {"src":"images/page-13.jpg","cap":"بیلبورد شبانه Xtrim VX"}
+      {"src":"images/environmental/environmental-01.webp","cap":"گرافیک محیطی 01"},
+      {"src":"images/environmental/environmental-02.webp","cap":"گرافیک محیطی 02"},
+      {"src":"images/environmental/environmental-03.webp","cap":"گرافیک محیطی 03"},
+      {"src":"images/environmental/environmental-04.webp","cap":"گرافیک محیطی 04"},
+      {"src":"images/environmental/environmental-05.webp","cap":"گرافیک محیطی 05"},
+      {"src":"images/environmental/environmental-06.webp","cap":"گرافیک محیطی 06"},
+      {"src":"images/environmental/environmental-07.webp","cap":"گرافیک محیطی 07"},
+      {"src":"images/environmental/environmental-08.webp","cap":"گرافیک محیطی 08"},
+      {"src":"images/environmental/environmental-09.webp","cap":"گرافیک محیطی 09"},
+      {"src":"images/environmental/environmental-10.webp","cap":"گرافیک محیطی 10"},
+      {"src":"images/environmental/environmental-11.webp","cap":"گرافیک محیطی 11"},
+      {"src":"images/environmental/environmental-12.webp","cap":"گرافیک محیطی 12"}
     ]
   }
 ]</script>
@@ -836,7 +846,7 @@ footer strong{color:#fff;}
     catEn.innerHTML = c.en;
     catDesc.textContent = c.desc;
     catGallery.innerHTML = c.images.map(img =>
-      `<figure data-src="${img.src}"><img src="${img.src}" alt="${img.cap}" loading="lazy"><figcaption>${img.cap}</figcaption></figure>`
+      `<figure data-src="${img.src}"><img src="${img.src}" alt="${img.cap}" loading="lazy" onerror="this.closest('figure').remove()"><figcaption>${img.cap}</figcaption></figure>`
     ).join('');
     document.body.classList.add('cat-open');
     categoryView.classList.add('open');
