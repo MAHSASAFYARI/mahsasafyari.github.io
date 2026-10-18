@@ -216,9 +216,11 @@ body.cat-open > main, body.cat-open > footer{display:none;}
 .cat-header .eyebrow{color:#9a9a9f;}
 .cat-header h2{font-size:clamp(1.7rem,4vw,2.4rem); font-weight:800;}
 .cat-header p{color:#9a9a9f; margin-top:12px; max-width:600px; line-height:1.8;}
-.cat-gallery{padding:50px 0 100px; display:flex; flex-direction:column; gap:28px;}
+.cat-gallery{padding:50px 0 100px; display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:24px; align-items:start;}
+@media (max-width:700px){.cat-gallery{grid-template-columns:1fr; gap:22px;}}
 .cat-gallery figure{margin:0; border-radius:20px; overflow:hidden; cursor:zoom-in;}
-.cat-gallery figure img{width:100%; display:block;}
+.cat-gallery figure img{width:100%; height:auto; display:block; transition:transform .25s ease;}
+.cat-gallery figure:hover img{transform:scale(1.025);}
 .cat-gallery figcaption{padding:16px 4px; font-size:0.92rem; color:#9a9a9f;}
 
 .lightbox{position:fixed; inset:0; background:rgba(0,0,0,0.9); display:none; align-items:center; justify-content:center; z-index:100; padding:24px;}
@@ -832,6 +834,17 @@ footer strong{color:#fff;}
   const CATS = JSON.parse(document.getElementById('cats-data').textContent);
   const CATS_BY_ID = {};
   CATS.forEach(c => CATS_BY_ID[c.id] = c);
+
+  // Keep every portfolio cover in sync with its category's first image.
+  document.querySelectorAll('#portfolioGrid .port-item[data-cat]').forEach(item => {
+    const category = CATS_BY_ID[item.dataset.cat];
+    const firstImage = category?.images?.[0];
+    const cover = item.querySelector('.port-thumb img');
+    if (cover && firstImage?.src) {
+      cover.src = firstImage.src;
+      cover.alt = category.fa;
+    }
+  });
 
   const categoryView = document.getElementById('categoryView');
   const catFa = document.getElementById('catFa');
