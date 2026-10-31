@@ -855,10 +855,43 @@ footer strong{color:#fff;}
     const firstImage = category?.images?.[0];
     const cover = item.querySelector('.port-thumb img');
     if (cover && firstImage?.src) {
+      cover.onerror = () => tryPortfolioImagePath(cover);
       cover.src = firstImage.src;
       cover.alt = category.fa;
     }
   });
+
+
+  // Try common folder spellings without hiding missing images silently.
+  function tryPortfolioImagePath(img) {
+    const original = img.dataset.original || img.getAttribute('src');
+    img.dataset.original = original;
+    const filename = original.split('/').pop();
+    const candidates = [
+      original,
+      `IMAGE/${filename}`,
+      `image/${filename}`,
+      `Images/${filename}`,
+      `images/branding/${filename}`,
+      `IMAGE/branding/${filename}`,
+      filename
+    ];
+    const next = Number(img.dataset.pathIndex || '0') + 1;
+    if (next < candidates.length) {
+      img.dataset.pathIndex = String(next);
+      img.src = candidates[next];
+    } else {
+      img.onerror = null;
+      img.style.display = 'none';
+      const fig = img.closest('figure');
+      fig.classList.add('missing-image');
+      fig.style.cssText = 'min-height:190px;background:#252529;border:1px dashed #777;display:flex;align-items:center;justify-content:center;padding:20px;cursor:default';
+      const message = document.createElement('div');
+      message.style.cssText = 'color:#ddd;text-align:center;line-height:2;overflow-wrap:anywhere';
+      message.textContent = `تصویر ${filename} پیدا نشد — پوشه تصاویر را کنار فایل HTML بررسی کنید.`;
+      fig.appendChild(message);
+    }
+  }
 
   const categoryView = document.getElementById('categoryView');
   const catFa = document.getElementById('catFa');
@@ -873,7 +906,7 @@ footer strong{color:#fff;}
     catEn.innerHTML = c.en;
     catDesc.textContent = c.desc;
     catGallery.innerHTML = c.images.map(img =>
-      `<figure data-src="${img.src}"><img src="${img.src}" alt="${img.cap}" loading="lazy" onerror="this.closest('figure').remove()"></figure>`
+      `<figure data-src="${img.src}"><img src="${img.src}" alt="${img.cap}" loading="lazy" onerror="tryPortfolioImagePath(this)"></figure>`
     ).join('');
     document.body.classList.add('cat-open');
     categoryView.classList.add('open');
